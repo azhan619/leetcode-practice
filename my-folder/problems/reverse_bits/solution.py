@@ -1,13 +1,21 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
         
+        
         output = 0
         
         for i in range(32):
             
-            bit = (n >> i) & 1
+            output = output << 1
             
-            output = output | (bit << (31-i))
+            curBit = n % 2
+            
+            output = output + curBit
+            
+            n = n >> 1
+        
+        
+        
             
         return output     
             
