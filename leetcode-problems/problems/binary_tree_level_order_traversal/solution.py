@@ -19,13 +19,16 @@ class Solution:
             node = curQ.pop(0)
             temp.append(node.val)
             qCount += 1 
+            
             if(node.left):
                 curQ.append(node.left)
                 j += 1
             if(node.right):
                 curQ.append(node.right)
                 j += 1
-                
+            
+            #Level completion check
+            
             if(qCount == k):
                 result.append(temp)
                 k = j
